@@ -1,0 +1,21 @@
+{
+  "name": "cypress-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pushstate-server .",
+    "cypress": "cypress"
+  },
+  "cypress": {
+    "baseUrl": "http://localhost:9000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^0.20.0",
+    "pushstate-server": "^3.0.1"
+  }
+}
