@@ -1,10 +1,20 @@
 describe('Interaction', function () {
-  it('clicking the button adds a result', function () {
-    // cy.visit('http://localhost:9000/index.html')
+  beforeEach(() => {
     cy.visit('/index.html')
-    cy.get('button').click()
+  })
+
+  it('clicking the button adds a result', function () {
+    cy.contains('Trigger!').click()
     cy.get('li').contains('42')
     cy.get('ul > li').as('items')
-    cy.get('@items').should('have.length', 1)  
+    cy.get('@items').should('have.length', 1)
+  })
+
+  it('clicking on the button again adds another result ', function () {
+    cy.contains('Trigger!').click()
+    cy.get('li').contains('42')
+    cy.contains('Trigger!').click()
+    cy.get('ul > li').as('items')
+    cy.get('@items').should('have.length', 2)
   })
 })
