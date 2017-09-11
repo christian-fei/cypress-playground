@@ -6,7 +6,7 @@ describe('Interaction', function () {
   it('clicking the button adds a result', function () {
     cy.contains('Trigger!').click()
     cy.get('ul > li').as('items')
-    cy.get('li').contains('😱')
+    cy.get('li').contains(`😱`)
     cy.get('@items').should('have.length', 1)
   })
   
